@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Calendar</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="container">
+         <div class="leftCol">
+            <div class="content">
+               <div id="clock"></div>
+               <br><br>
+               
+                  <h1 class="date"><strong>To Do List/Events</strong></h1>
+                  <div id="notes" class="notes"></div>
+                 
+            </div>
+         </div>
+         <div class="calendar">
+            <div class="month">
+               <i id="backButton" class="fas fa-angle-left prev"></i>
+               <div class="date">
+                  <div class="monthDisplay" id="monthDisplay"></div>
+                  <p></p>
+               </div>
+               <i id="nextButton" class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays" id="weekdays">
+               <div>Sunday</div>
+               <div>Monday</div>
+               <div>Tuesday</div>
+               <div>Wednesday</div>
+               <div>Thursday</div>
+               <div>Friday</div>
+               <div>Saturday</div>
+            </div>
+            <div class="days" id="calendar"></div>
+         </div>
+         <div id="newEventModal">
+            <h2>New Event</h2>
+            <p>&nbsp;</p>
+            <input id="eventTitleInput" placeholder="Event Title" />
+            <p>&nbsp;</p>
+            <button id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+         </div>
+         <div id="deleteEventModal">
+            <h2>Event</h2>
+            <p>&nbsp;</p>
+            <p id="eventText"></p>
+            <p>&nbsp;</p>
+            <button id="deleteButton">Delete</button>
+            <button id="closeButton">Close</button>
+         </div>
+         <div id="modalBackDrop"></div>
+      </div>
+      <script src="./script.js"></script> 
+      <!--SCRIPT AND STYLE FOR CLOCK-->
+      <script>function clock(){
+         let date = new Date();
+         let hrs = date.getHours();
+         let mins = date.getMinutes();
+         let secs = date.getSeconds();
+         let period = "AM";
+         if (hrs == 0) {
+           hrs = 12;
+         } else if (hrs >= 12) {
+           hrs = hrs - 12;
+           period = "PM";
+         }
+         hrs = hrs < 10 ? "0" + hrs : hrs;
+         mins = mins < 10 ? "0" + mins : mins;
+         secs = secs < 10 ? "0" + secs : secs;
+         
+         let time = `${hrs}:${mins}:${secs}:${period}`;
+         document.getElementById("clock").innerText = time;
+         setTimeout(clock, 1000);
+         console.log("sadc")
+         };
+         clock();
+      </script>
+      <style>
+         #clock{
+         background-color: #d0a6f7;
+         color: #f6f8f7cc;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 40px;
+         }
+      </style>
+   </body>
+</html>

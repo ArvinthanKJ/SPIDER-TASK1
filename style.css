@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #fffdd0;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.leftCol {
+  width: 350px;
+  height: 70rem;
+  background-color: #d0a6f7;
+  padding: 40px;
+}
+
+.leftCol ul li{
+  list-style: none;
+}/* Remove bullets*/
+
+
+.leftCol .noteList li{
+  color: #ffffffcc;
+  margin-bottom: 10px;
+}
+
+
+.notes {
+  border-bottom: solid 1px rgba(255,255,255,0.4);
+  font-size: 16px;
+}
+
+
+.addNote,
+.removeNote{
+  float: right;
+  color: #ffffffcc;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.addNote:hover,
+.removeNote:hover{
+  color: #fffdd0;
+}
+
+.addNote{
+  font-size: 16px;
+}
+
+.leftCol h1{
+  color: #ffffffcc;
+  margin-bottom: 40px;
+}
+
+
+.calendar {
+  width: 85rem;
+  height: 70rem;
+  background-color: #ce7349;
+  overflow:hidden;
+  
+}
+
+.month {
+  width: 100%;
+  height: 12rem;
+  background-color: #bdb87c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  overflow:hidden;
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.month p {
+  font-size: 1.6rem;
+}
+.month div {
+font-size: 2.6rem;
+}
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0.4rem 0.4rem;
+  display: flex;
+  align-items: left;
+  
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(84.2rem / 7);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  overflow:hidden;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+  
+}
+
+.square2 {
+  background-color: #ce7349;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(80.2rem / 7);
+  height: 10rem;
+  display: flex;
+  /*justify-content: center;
+align-items: center;*/
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+ /* background-color: white;*/
+  margin: 5px;
+  /*box-shadow: 0px 0px 3px #CBD4C2;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow:hidden;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #c5511ccc;
+}
+ .selectDay{
+  background-color:#777
+ }
+ 
+ #newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #d0a6f7;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
